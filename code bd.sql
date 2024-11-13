@@ -1,14 +1,6 @@
-Exercice 2 : « Centre de Formation »
-
-1. Créer la base de données « Centre formation »
-
-Vous pouvez utiliser la commande SQL suivante pour créer la base :
 
 CREATE DATABASE CentreFormation;
 
-2. Créer les tables depuis le MLD
-
-Voici un exemple SQL de création des tables (clés primaires et étrangères incluses) :
 
 -- Table Étudiant
 CREATE TABLE Etudiant (
@@ -55,25 +47,3 @@ CREATE TABLE Formation (
     prixForm DECIMAL(10, 2)
 );
 
-3. Ajouter une contrainte NOT NULL sur la colonne typeCours de la table Inscription
-
-La contrainte NOT NULL est déjà ajoutée dans la définition de Inscription :
-
-typeCours VARCHAR(50) NOT NULL
-
-4. Ajouter une contrainte CHECK sur dateFin dans la table Session
-
-Cette contrainte garantit que la dateFin est postérieure à la dateDebut :
-
-ALTER TABLE Session
-ADD CONSTRAINT chk_dates CHECK (dateFin > dateDebut);
-
-5. Ajouter une colonne Active sur la table SPECIALITE
-
-L’ajout de la colonne est déjà inclus dans la création de la table Specialite avec la valeur par défaut 0 (inactif) :
-
-ALTER TABLE Specialite
-ADD Active BOOLEAN DEFAULT 0;
-
-
---
